@@ -1,0 +1,19 @@
+<view class="super-container">
+    <scroll-view class="bg-scroll" scroll-y="true">
+        <image class="banner-image" src="../../sources/images/01banner.png"/>
+
+        <view class="table-container">
+            <view class="section-container">
+                
+            </view>
+              
+              
+              
+            
+        </view>
+          
+    </scroll-view>  
+</view>
+  
+
+  
