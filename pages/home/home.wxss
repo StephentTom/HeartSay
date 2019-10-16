@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .bg-scroll {
     background-color: #f5f5f5;
@@ -44,3 +45,6 @@
     color: gray;
     font-size: 25rpx;
 }
+=======
+/* pages/home/home.wxss */
+>>>>>>> 2e4287392bc682f08f6836356df99602f1611fd9
