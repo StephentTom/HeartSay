@@ -3,13 +3,17 @@
         <image class="banner-image" src="../../sources/images/01banner.png"/>
 
         <view class="table-container">
-            <view class="section-container">
-                
+            <view class="section-container" wx:for="{{list}}" wx:for-item="section" wx:key="unique">
+                <text>{{section.title}}</text>
+                <view class="cell-horContainer">
+                    <view class="cell-contentView" wx:for="{{section.sections}}" wx:key="unique">
+                        <image src="{{item.avatar_url}}"/>
+                        <text>{{item.desc}}</text>
+                    </view>
+                </view>       
             </view>
-              
-              
-              
-            
+
+
         </view>
           
     </scroll-view>  

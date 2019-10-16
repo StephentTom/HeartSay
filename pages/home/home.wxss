@@ -9,14 +9,38 @@
 }
 .table-container {
     width: 100%;
-    padding: 30rpx;
+    padding-bottom: 20rpx;
     background-color: red;
 }
 .section-container {
-    
+    background-color: blue;
 }
-/* 
-.table-container text {
-    color: white;
-    font: 38rpx;
-} */
+.section-container text {
+    color: black;
+    font-size: 30rpx;
+}
+.cell-horContainer {
+    width: 100%;
+    height: 250rpx;
+    display: flex;
+    flex-direction: row;
+    /* 可换行 默认 nowrap：不换行*/
+    flex-wrap: wrap;
+    /*上 右左 下*/
+    padding: 20rxp 25rxp 25rpx; 
+    background-color: pink;
+}
+.cell-contentView {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: rebeccapurple;
+}
+.cell-contentView image {
+    width: 90%;
+    height: 150rpx;
+}
+.cell-contentView text {
+    color: gray;
+    font-size: 25rpx;
+}
