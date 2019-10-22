@@ -1,28 +1,24 @@
-<<<<<<< HEAD
+
+
 <view class="super-container">
     <scroll-view class="bg-scroll" scroll-y="true">
         <image class="banner-image" src="../../sources/images/01banner.png"/>
 
         <view class="table-container">
             <view class="section-container" wx:for="{{list}}" wx:for-item="section" wx:key="unique">
-                <text>{{section.title}}</text>
+                <text class="section-title">{{section.title}}</text>
                 <view class="cell-horContainer">
-                    <view class="cell-contentView" wx:for="{{section.sections}}" wx:key="unique">
+                    <view class="cell-contentView" wx:for="{{section.sections}}" wx:key="unique" bind:tap="toDetailPress" data-item="{{item}}"> 
                         <image src="{{item.avatar_url}}"/>
-                        <text>{{item.desc}}</text>
+                        <view>{{item.desc}}</view>
                     </view>
                 </view>       
             </view>
+        </view>
 
-
+        <view class="footer-view">
+            
         </view>
           
     </scroll-view>  
 </view>
-  
-
-  
-=======
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
->>>>>>> 2e4287392bc682f08f6836356df99602f1611fd9

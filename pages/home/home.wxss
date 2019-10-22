@@ -1,50 +1,67 @@
-<<<<<<< HEAD
 
 .bg-scroll {
     background-color: #f5f5f5;
 }
+
 .banner-image {
     display: flex; /*去除image标签默认边距*/
     width: 100%;
     height: 600rpx;
 }
+
 .table-container {
     width: 100%;
     padding-bottom: 20rpx;
-    background-color: red;
+    background-color: white;
 }
 .section-container {
-    background-color: blue;
-}
-.section-container text {
+    padding: 30rpx 30rpx;
+} 
+.section-title {
     color: black;
     font-size: 30rpx;
 }
 .cell-horContainer {
-    width: 100%;
-    height: 250rpx;
+    margin-top: 15rpx;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    /* 默认 content-box: 内外边距+边框高宽都不算在盒子的高宽中, 盒子的高宽=内容的高宽;
+        border-box: 内外边距+边框高宽都算在盒子的高宽中 */
+    box-sizing: border-box; 
     /* 可换行 默认 nowrap：不换行*/
     flex-wrap: wrap;
-    /*上 右左 下*/
-    padding: 20rxp 25rxp 25rpx; 
-    background-color: pink;
+}
+.cell-horContainer :last-child {
+    margin-bottom: 0rpx;
+}
+.cell-horContainer :nth-last-child(2) {
+    margin-bottom: 0rpx;
 }
 .cell-contentView {
-    width: 50%;
+    width: 45%;
+    margin-bottom: 80rpx;
     display: flex;
     flex-direction: column;
-    background-color: rebeccapurple;
+    background-color: white;
+    /* 设置阴影 */
+    box-shadow: #eeeeee 10rpx 10rpx 0rpx;
+    /* 设置圆角 */
+    border-radius: 10rpx;
 }
 .cell-contentView image {
-    width: 90%;
-    height: 150rpx;
+    width: 100%;
+    height: 200rpx;
+    /* 设置圆角 */
+    border-radius: 10rpx;
 }
-.cell-contentView text {
+.cell-contentView view {
     color: gray;
     font-size: 25rpx;
+    margin: auto;
+    padding: 10rpx;
 }
-=======
-/* pages/home/home.wxss */
->>>>>>> 2e4287392bc682f08f6836356df99602f1611fd9
+
+.footer-view {
+    
+}
