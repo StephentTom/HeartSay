@@ -1,4 +1,7 @@
 // pages/home/home.js
+import * as ToURL from '../../utils/navigateToURL';
+
+
 Page({
 
   /**
@@ -60,10 +63,34 @@ Page({
   },
   
   /**
-   * 跳转详情
+   * 跳转详情 - 带参数, 
    */
   toDetailPress: function(option) {
-    console.log(option)
+    let itemDict = option.currentTarget.dataset.item
+    console.log("to详情:", itemDict.desc);
+
+    wx.navigateTo({
+      // 需要拼接参数
+      url: '../../pages/detail/detail?desc=' + itemDict.desc,
+      success: (result) => {},
+      fail: () => {},
+      complete: () => {}
+    });
+  },
+
+  /**
+   * 点击购买历史 - 不带参数
+   */
+  toBugHistory: function() {
+    console.log("点击购买历史")
+
+    wx.navigateTo({
+      url: ToURL.toDetailURL,
+      success: (result) => {},
+      fail: () => {},
+      complete: () => {}
+    });
+      
   }
 
 })

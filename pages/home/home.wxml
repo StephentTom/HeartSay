@@ -1,5 +1,3 @@
-
-
 <view class="super-container">
     <scroll-view class="bg-scroll" scroll-y="true">
         <image class="banner-image" src="../../sources/images/01banner.png"/>
@@ -16,9 +14,11 @@
             </view>
         </view>
 
-        <view class="footer-view">
-            
+        <view class="footer-view" bind:tap="toBugHistory">
+            <text class="iconfont icon-shijian">  购买历史</text>
+            <view class="splitLine"/>
+            <text class="footer-text">可以在星巴克中国公众号选购礼品卡</text>
         </view>
-          
+
     </scroll-view>  
 </view>

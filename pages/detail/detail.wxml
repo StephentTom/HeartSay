@@ -1,2 +1,18 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+
+<view class="super-container">
+    <image class="banner-image" src="{{card.images[0]}}"/>
+      
+    <view class="card-container">
+        <text class="iconfont icon-weibiaoti-">  {{card.title}}</text>
+        <view class="card-hor-container">
+            <view class="card-content" wx:for="{{card.images}}" wx:key="unique">
+                <image src="{{item}}"/>
+            </view>
+              
+        </view>
+            
+    </view>
+      
+</view>
+  
