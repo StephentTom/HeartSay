@@ -23,7 +23,7 @@
     /* 默认 content-box: 内边距+边框高宽都不算在盒子的高宽中, 盒子的高宽=内容的高宽;
         border-box: 内边距+边框高宽都算在盒子的高宽中 */
     box-sizing: border-box; 
-    /* 可换行 默认 nowrap：不换行*/
+    /* 可换行 默认 nowrap：不换行(单行显示)*/
     flex-wrap: wrap;
 }
 .cell-horContainer :last-child {

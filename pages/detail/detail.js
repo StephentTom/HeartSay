@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 数据源
     card: {
       title: "选择卡面",
       // defaultBanner: "../../sources/images/show01.jpg",
@@ -27,7 +28,32 @@ Page({
       useTime: "2019.02.14-2020.02.14 周一至周日 全天",
       useNotice: "提供完善的工作环境，并创造相互尊重和相互信任的工作氛围。秉持多元化是我们企业经营的重要原则。采用最高标准进行采购烘焙，并提供最新鲜的咖啡。以高度热忱满足顾客的需求。"
     }
+
+    // 关于css自定义属性
+    
   },
+
+  /**
+   * 点击选择卡面
+   */
+  selectedCardTap: function(options) {
+    console.log("selectedCardTap", options)
+  },
+
+  /**
+   * 点击选择礼物
+   */
+  selectedGiftTap: function(options) {
+    console.log("selectedGiftTap", options)
+  },
+
+  /**
+   * 点击查看全部门店
+   */
+  toCheckStores: function() {
+    console.log("toCheckStores")
+  },
+
 
   /**
    * 生命周期函数--监听页面加载

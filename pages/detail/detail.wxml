@@ -4,14 +4,40 @@
     <image class="banner-image" src="{{card.images[0]}}"/>
       
     <view class="card-container">
-        <text class="iconfont icon-weibiaoti-">  {{card.title}}</text>
+        <text class="iconfont icon-weibiaoti-"> {{card.title}}</text>
         <view class="card-hor-container">
-            <view class="card-content" wx:for="{{card.images}}" wx:key="unique">
+            <view class="card-content" wx:for="{{card.images}}" wx:key="unique" bind:tap="selectedCardTap" data-cardItem="{{item}}">
                 <image src="{{item}}"/>
             </view>
-              
         </view>
+    </view>
+
+    <view class="gift-container">
+        <text class="iconfont icon-tubiaozhizuomoban"> {{gift.title}} </text>
+        <view class="gift-hor-container">
+            <view class="gift-content" wx:for="{{gift.prices}}" wx:key="unique" bind:tap="selectedGiftTap" data-giftItem="{{item}}">
+                <text class="gift-price-text">{{item}} 元</text>
+                <text class="gift-desc-text">星礼卡</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="content-container">
+        <view class="content-store wrapViewStyle">
+            <text class="textStyle">适用门店</text>
+            <text class="textStyle content-check-text" bind:tap="toCheckStores">查看全部门店</text>  
+        </view>
+
+        <view class="content-usetime wrapViewStyle">
+            <text class="textStyle">可用时段</text>
+            <text class="textStyle content-time-text">{{content.useTime}}</text>  
+        </view>
+          
+        <view class="content-useNotice wrapViewStyle">
+            <text class="textStyle">使用须知</text>
             
+              
+        </view>  
     </view>
       
 </view>
