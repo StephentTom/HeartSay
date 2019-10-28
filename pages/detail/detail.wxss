@@ -108,6 +108,7 @@
 }
 
 .bug-send-container {
+    background-color: white;
     /* 有发现块级元素设置了padding后, 会超出屏幕最大宽度时, 就可以使用此属性 */
     box-sizing: border-box; 
     width: 100%; /*设置固定定位, 宽度必须要设置, 不然宽度会根据内容宽度设置*/
