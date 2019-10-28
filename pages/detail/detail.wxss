@@ -54,7 +54,8 @@
     flex-direction: column;
     align-items: center;
     border-radius: 8rpx;
-    border: gray double 3rpx;
+    border: gray double 5rpx;
+    border-color: green;
 }
 .gift-price-text {
     margin-top: 10rpx;
@@ -69,13 +70,14 @@
 }
 
 .content-container {
+    box-sizing: border-box; /* 不设置的话, 宽度会超出屏幕最大宽度 */
     margin-top: 30rpx;
-    padding: 0rpx 30rpx;
+    padding: 0rpx 30rpx 110rpx;
     width: 100%;
     height: 200rxp;
     background-color: white;
 }
-.textStyle {
+.content-title-style {
     font-size: 30rpx;
     color: black;
 }
@@ -90,4 +92,27 @@
 .content-time-text {
     margin-left: 20rpx;
     color: rgb(152, 155, 148);
+}
+.content-useNotice {
+    display: flex;
+    flex-direction: row;
+}
+.content-useNotice-container {
+    flex: 1;
+}
+.content-useNotice-texts {
+    padding-left: 15rpx;
+}
+.bug-useNotice {
+    border-bottom-width: 0rpx;
+}
+
+.bug-send-container {
+    /* 有发现块级元素设置了padding后, 会超出屏幕最大宽度时, 就可以使用此属性 */
+    box-sizing: border-box; 
+    width: 100%; /*设置固定定位, 宽度必须要设置, 不然宽度会根据内容宽度设置*/
+    padding: 15rpx 30rpx;
+    /* 固定定位 */
+    position: fixed;
+    bottom: 0;
 }

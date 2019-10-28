@@ -1,12 +1,12 @@
 <!--pages/detail/detail.wxml-->
 
 <view class="super-container">
-    <image class="banner-image" src="{{card.images[0]}}"/>
+    <image class="banner-image" src="{{card.images[cardSelectedIndex]}}"/>
       
     <view class="card-container">
         <text class="iconfont icon-weibiaoti-"> {{card.title}}</text>
         <view class="card-hor-container">
-            <view class="card-content" wx:for="{{card.images}}" wx:key="unique" bind:tap="selectedCardTap" data-cardItem="{{item}}">
+            <view class="card-content" wx:for="{{card.images}}" wx:key="unique" wx:for-index="i" style="border: green solid {{i == cardSelectedIndex? 5 : 0}}rpx; opacity: {{i == cardSelectedIndex ? 1 : 0.65}}" bind:tap="selectedCardTap" data-cardItem="{{item}}" data-cardIndex="{{i}}">
                 <image src="{{item}}"/>
             </view>
         </view>
@@ -15,7 +15,7 @@
     <view class="gift-container">
         <text class="iconfont icon-tubiaozhizuomoban"> {{gift.title}} </text>
         <view class="gift-hor-container">
-            <view class="gift-content" wx:for="{{gift.prices}}" wx:key="unique" bind:tap="selectedGiftTap" data-giftItem="{{item}}">
+            <view class="gift-content" wx:for="{{gift.prices}}" wx:key="unique" wx:for-index="i" style="border-color: {{i == giftSelectedIndex? 'green' : 'gray'}}; opacity: {{i == giftSelectedIndex ? 1 : 0.65}}" bind:tap="selectedGiftTap" data-giftItem="{{item}}" data-giftIndex="{{i}}">
                 <text class="gift-price-text">{{item}} 元</text>
                 <text class="gift-desc-text">星礼卡</text>
             </view>
@@ -24,21 +24,31 @@
 
     <view class="content-container">
         <view class="content-store wrapViewStyle">
-            <text class="textStyle">适用门店</text>
-            <text class="textStyle content-check-text" bind:tap="toCheckStores">查看全部门店</text>  
+            <text class="content-title-style">适用门店</text>
+            <text class="content-title-style content-check-text" bind:tap="toCheckStores">查看全部门店</text>  
         </view>
 
         <view class="content-usetime wrapViewStyle">
-            <text class="textStyle">可用时段</text>
-            <text class="textStyle content-time-text">{{content.useTime}}</text>  
+            <text class="content-title-style">可用时段</text>
+            <text class="content-title-style content-time-text">{{content.useTime}}</text>  
         </view>
           
         <view class="content-useNotice wrapViewStyle">
-            <text class="textStyle">使用须知</text>
-            
-              
+            <text class="content-title-style">使用须知</text>
+            <view class="content-useNotice-container">
+                <view class="content-title-style content-useNotice-texts" wx:for="{{useNotices}}" wx:key="unique">-{{item}}</view>
+            </view>
         </view>  
+
+        <view class="bug-useNotice wrapViewStyle">
+            <text class="content-title-style">购买须知</text>
+            <text class="content-title-style content-check-text" bind:tap="toBugContent">查看内容</text> 
+        </view>
     </view>
-      
 </view>
+
+<view class="bug-send-container">
+    <button type="primary" bind:tap="toBugAndSend">购买并赠送</button>
+</view>
+  
   

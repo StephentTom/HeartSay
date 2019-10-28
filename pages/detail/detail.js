@@ -26,11 +26,15 @@ Page({
 
     content: {
       useTime: "2019.02.14-2020.02.14 周一至周日 全天",
-      useNotice: "提供完善的工作环境，并创造相互尊重和相互信任的工作氛围。秉持多元化是我们企业经营的重要原则。采用最高标准进行采购烘焙，并提供最新鲜的咖啡。以高度热忱满足顾客的需求。"
-    }
+      useNotice: "提供完善的工作环境，并创造相互尊重和相互信任的工作氛围。秉持多元化是我们企业经营的重要原则。采用最高标准进行采购烘焙，并提供最新鲜的咖啡。以高度热忱满足顾客的需求"
+    },
 
     // 关于css自定义属性
+    cardSelectedIndex: 0, // 默认选中第0
+    giftSelectedIndex: 0, // 默认选中第0
     
+    // 关于处理数据源自定义属性
+    useNotices: Array
   },
 
   /**
@@ -38,6 +42,11 @@ Page({
    */
   selectedCardTap: function(options) {
     console.log("selectedCardTap", options)
+
+    let cardIndex = options.currentTarget.dataset.cardindex
+    this.setData({
+      cardSelectedIndex: cardIndex
+    })
   },
 
   /**
@@ -45,6 +54,11 @@ Page({
    */
   selectedGiftTap: function(options) {
     console.log("selectedGiftTap", options)
+
+    let giftIndex = options.currentTarget.dataset.giftindex
+    this.setData({
+      giftSelectedIndex: giftIndex
+    })
   },
 
   /**
@@ -54,12 +68,35 @@ Page({
     console.log("toCheckStores")
   },
 
+  /**
+   * 点击查看购买须知内容
+   */
+  toBugContent: function() {
+    console.log("toBugContent")
+  },
 
+  /**
+   * 点击购买并赠送
+   */
+  toBugAndSend: function() {
+    console.log("toBugAndSend")
+  },
+
+
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("接收详情dict:", options);
+    console.log("接收详情dict:", options, this);
+    
+    // 处理数据源
+    let useNotices = this.data.content.useNotice.split("。")
+    // 更新自定义数据
+    this.setData({
+      useNotices: useNotices
+    });
+    console.log("useNotices:", useNotices);
   },
 
   /**
